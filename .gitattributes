@@ -1,0 +1,13 @@
+* text=auto
+
+*.sh text eol=lf
+mvnw text eol=lf
+
+*.cmd text eol=crlf
+mvnw.cmd text eol=crlf
+
+*.jar binary
+*.class binary
+*.png binary
+*.jpg binary
+*.ico binary
