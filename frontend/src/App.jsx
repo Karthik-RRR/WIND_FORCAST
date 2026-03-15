@@ -40,7 +40,6 @@ export default function App() {
     }
   }
 
-  // Format x-axis tick
   function formatTick(iso) {
     try { return format(parseISO(iso), 'dd MMM HH:mm') }
     catch { return iso }
@@ -66,7 +65,6 @@ export default function App() {
     )
   }
 
-  // Pick evenly spaced ticks so x-axis isn't crowded
   const ticks = data
     ? data.filter((_, i) => i % Math.max(1, Math.floor(data.length / 8)) === 0)
         .map(d => d.startTime)
@@ -74,7 +72,6 @@ export default function App() {
 
   return (
     <>
-      {/* Header */}
       <div className="header">
         <h1>🌬️ Wind Forecast Monitor</h1>
         <span></span>
@@ -109,14 +106,11 @@ export default function App() {
           </button>
         </div>
 
-        {/* Error */}
         {error && <div className="error">⚠ {error}</div>}
 
-        {/* Chart */}
         <div className="chart-box">
           <div className="chart-title">Generation (MW)</div>
 
-          {/* Legend */}
           <div className="legend">
             <div className="legend-item">
               <div className="dot" style={{ background: '#1a73e8' }} />
@@ -179,7 +173,6 @@ export default function App() {
           )}
         </div>
 
-        {/* Stats */}
         {stats && stats.n > 0 && (
           <div className="stats">
             {[
